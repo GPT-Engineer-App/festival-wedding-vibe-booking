@@ -3,15 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const Index = () => {
   const [name, setName] = useState("");
+  const [time, setTime] = useState("");
   const [guestList, setGuestList] = useState([]);
 
   const handleSignUp = () => {
-    if (name.trim()) {
-      setGuestList([...guestList, name]);
+    if (name.trim() && time.trim()) {
+      setGuestList([...guestList, { name, time }]);
       setName("");
+      setTime("");
     }
   };
 
@@ -35,6 +38,19 @@ const Index = () => {
               onChange={(e) => setName(e.target.value)}
               className="w-full"
             />
+            <Select onValueChange={(value) => setTime(value)} value={time}>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Select a time" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="10:00 AM">10:00 AM</SelectItem>
+                <SelectItem value="11:00 AM">11:00 AM</SelectItem>
+                <SelectItem value="12:00 PM">12:00 PM</SelectItem>
+                <SelectItem value="01:00 PM">01:00 PM</SelectItem>
+                <SelectItem value="02:00 PM">02:00 PM</SelectItem>
+                <SelectItem value="03:00 PM">03:00 PM</SelectItem>
+              </SelectContent>
+            </Select>
             <Button onClick={handleSignUp} className="w-full">
               Sign Up
             </Button>
@@ -45,7 +61,7 @@ const Index = () => {
             <ul className="list-disc list-inside mt-2 text-left">
               {guestList.map((guest, index) => (
                 <li key={index} className="text-gray-700">
-                  {guest}
+                  {guest.name} - {guest.time}
                 </li>
               ))}
             </ul>
