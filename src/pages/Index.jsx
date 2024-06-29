@@ -57,18 +57,6 @@ const Index = () => {
           </div>
           <Separator className="my-4" />
           <div className="mt-4">
-            <Card className="w-full max-w-md mx-4 my-8">
-              <CardHeader>
-                <CardTitle className="text-center text-2xl font-bold text-gray-800">
-                  Welcome to the Festival Wedding Vibe Booking System!
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-lg text-gray-700 mb-4">
-                  This is the most hilarious and unforgettable wedding booking system where you can sign up for a time slot to join the festival wedding vibe. Enter your name and select a time to be part of the fun!
-                </p>
-              </CardContent>
-            </Card>
             <h2 className="text-2xl font-semibold text-gray-800">Guest List</h2>
             <ul className="list-disc list-inside mt-2 text-left">
               {guestList.map((guest, index) => (
