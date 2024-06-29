@@ -28,7 +28,7 @@ const Index = () => {
         </CardHeader>
         <CardContent className="text-center">
           <p className="text-lg text-gray-700 mb-4">
-            Welcome to the most hilarious and unforgettable wedding booking system!
+            Book a timeslot in a cottage with someone you met at the wedding!
           </p>
           <Separator className="my-4" />
           <div className="flex flex-col items-center space-y-4">
